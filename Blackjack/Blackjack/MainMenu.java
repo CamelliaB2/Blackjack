@@ -59,11 +59,11 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Welcome Back To Blackjack Studio, User!");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\camel\\Documents\\Cards\\ace_of_spades.png")); // NOI18N
-        jLabel2.setText("Label2");
+        jLabel2.setIcon(new javax.swing.ImageIcon("src/CardImages/club.png")); // NOI18N
+        jLabel2.setText("");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\camel\\Documents\\Cards\\ace_of_clubs.png")); // NOI18N
-        jLabel3.setText("jLabel3");
+        jLabel3.setIcon(new javax.swing.ImageIcon("src/CardImages/spade.png")); // NOI18N
+        jLabel3.setText("");
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
