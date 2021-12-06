@@ -1,5 +1,4 @@
-package Blackjack;
-public class BlackJack {
+public class Blackjack1 {
 
 	public static void main(String[] args) throws Exception 
 	{
