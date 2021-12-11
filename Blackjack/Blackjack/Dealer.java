@@ -1,4 +1,3 @@
-package Blackjack;
 
 public class Dealer {
 	private Hand hand;

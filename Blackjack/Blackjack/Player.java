@@ -1,4 +1,3 @@
-package Blackjack;
 
 public class Player {
 	private int bet;
@@ -7,7 +6,7 @@ public class Player {
 	private Hand hand;
 	
 	public Player() {
-		bank = 100000;
+		bank = 1000;
 		hand = new Hand();
 	}
 	public Player(int bank, String name) {
