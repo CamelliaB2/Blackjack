@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BlackjackGame {
+public class BlackJackGame {
 	private Scanner ki = new Scanner(System.in);
 	private int users; 
 	private Player[] players;

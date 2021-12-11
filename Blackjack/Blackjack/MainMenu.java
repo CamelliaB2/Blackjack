@@ -131,7 +131,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    	BlackjackGame mygame = new BlackjackGame();
+    	BlackJackGame mygame = new BlackJackGame();
 
 		mygame.initializeGame();
 		do {
