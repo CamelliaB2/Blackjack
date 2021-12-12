@@ -1,5 +1,6 @@
 public class Blackjack1 {
 
+	//This is where the whole thing starts: the main method for the Intro menu. From there, Users can navigate to whichever page they want to go.
 	public static void main(String[] args) throws Exception 
 	{
 		/* Set the Nimbus look and feel */

@@ -13,7 +13,6 @@ public class Hand
 		int total =0;
 		for(int i = 0; i < numberOfCards; i++) {
 			int value = theHand[i].getValue();
-//			System.out.println(value);   test use
 			if(value != 1 && value != 11 && value != 12 && value != 13) {
 				total += value;
 			}
@@ -23,7 +22,6 @@ public class Hand
 		}
 		for(int i = 0; i < numberOfCards; i++) {
 			int value = theHand[i].getValue();
-//			System.out.println(value);    test use
 			if(value == 1) {
 				if(total > 10) {
 					total += value;
@@ -42,14 +40,19 @@ public class Hand
 		// player.get(i).getHand.get(j).addCard(Deck.getNextCard());
 		//i and j are which player and player's which hand, cause player can split the hand to two hand
 	}
+	
+	//Return Hand
 	public Card[] getCard() {
 		return theHand;
 	}
+	
+	//Clears Hand
 	public void clearHand() {
 		numberOfCards = 0;
 		theHand = new Card[12];
 	}
 	
+	//Returns String of Player's Hand
 	public String toString() {
 		String s = "";
 		for(int i = 0; i < numberOfCards; i++) {
@@ -57,6 +60,8 @@ public class Hand
 		}
 		return s;
 	}
+	
+	//Returns String of Dealer's Hand, with one card hidden as per Blackjack rules
 	public String dealerToString(boolean hide) {
 		String s = theHand[0].toString() + ", [Hide]";
 		return s;

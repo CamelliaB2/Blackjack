@@ -19,10 +19,6 @@ public class BlackJackGame {
 			if(users > 6 || users < 1) {
 				System.out.println("One table max is 6 people, please enter an amount between 1 and 6.");
 			}
-				
-			
-			
-
 		} while (users > 6 || users < 1);
 
 		players = new Player[users];
@@ -77,8 +73,7 @@ public class BlackJackGame {
 
 	// Initial check for dealer or player Blackjack
 	public void checkBlackjack(){
-		//System.out.println();
-
+		
 		if (dealer.isBlackjack() ) {
 			System.out.println("Dealer has BlackJack!");
 			for (int i =0; i < users; i++) {
@@ -365,6 +360,7 @@ public class BlackJackGame {
 			}
 		}
 	}
+	
 	// This code calculates all possible outcomes and adds or removes the player bets
 	public void settleBets() {
 		System.out.println();
@@ -386,7 +382,6 @@ public class BlackJackGame {
 				} else {
 					System.out.println(players[i].getName() + " has won");
 					players[i].win();
-					
 				}
 			}
 		}

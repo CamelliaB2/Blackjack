@@ -4,45 +4,58 @@ public class Player {
 	private int bank;
 	private String name;
 	private Hand hand;
-	
+
+	//Constructs a Player and sets bank and initializes a new hand
 	public Player() {
 		bank = 1000;
 		hand = new Hand();
 	}
+	
+	//Constructs a player and initializes variables
 	public Player(int bank, String name) {
 		this.setBank(bank);
 		this.setName(name);
 		hand = new Hand();
 	}
 
+	//Returns the bank
 	public int getBank() {
 		return bank;
 	}
 
+	//Initializes bank
 	public void setBank(int bank) {
 		this.bank = bank;
 	}
 
+	//Returns name
 	public String getName() {
 		return name;
 	}
 
+	//Initializes name
 	public void setName(String name) {
 		this.name = name;
 	}
 	
-	// set what if player win loss bust and blackjack the bank will change
+	// Set what if player win loss bust and blackjack the bank will change
 	public void blackjack() {
 		bank += bet * 1.5;
 	}
+	
+	//Establishes results of player busting, or going over 21
 	public void bust() {
 		bank -= bet;
 		bet = 0;
 	}
+	
+	//Establishes results of player winning, or getting 21/higher number than dealer
 	public void win() {
 		bank += bet;
 		bet = 0;
 	}
+	
+	//Establishes results of player losing, or dealer getting higher number than player
 	public void loss() {
 		bank -= bet;
 		bet = 0;

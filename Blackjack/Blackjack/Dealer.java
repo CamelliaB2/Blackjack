@@ -3,10 +3,12 @@ public class Dealer {
 	private Hand hand;
 	private boolean hide;
 
+	//Constructs a Dealer
 	public Dealer() {
 		hand = new Hand();
 		hide = true;
 	}
+	
 	// Determines if dealer has a blackjack
 	public boolean isBlackjack(){
 		if (hand.calculateTotal() == 21){
@@ -16,10 +18,12 @@ public class Dealer {
 		}
 	}
 	
+	//Returns hide
 	public boolean getHide() {
 		return hide;
 	}
 	
+	//Returns hand
 	public Hand getHand() {
 		return hand;
 	}
@@ -34,6 +38,7 @@ public class Dealer {
 		hand.clearHand();
 	}
 	
+	//Returns String of Dealer's hand
 	public String getHandString(boolean hide) {
 		String str = "";
 		if(hide) {

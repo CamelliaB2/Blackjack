@@ -6,13 +6,15 @@ public class Deck {
 	private int numPeck;
 	private int card = 0;
 	
+	//Constructs a Deck and initializes variables
 	public Deck(int numPeck) {
 		this.setNumPeck(numPeck);
 		cards = new ArrayList<>();
-
 		createDeck(numPeck);
 		mixCards(10);
 	}
+	
+	//Creates a new deck
 	public void createDeck(int num) {
 		if(num<1) {
 			System.out.println("not valued number");
@@ -28,11 +30,15 @@ public class Deck {
 			}
 		}
 	}
+	
+	//Swaps cards
 	public void swapCards(int a, int b) {
 		Card temp = cards.get(a);
 		cards.set(a,cards.get(b));
 		cards.set(b,temp);
 	}
+	
+	//Shuffles deck
 	public void mixCards(int times) {
 		int totalCards = 52* numPeck;
 		Random r1 = new Random();
@@ -41,19 +47,27 @@ public class Deck {
 			swapCards(r1.nextInt(totalCards), r2.nextInt(totalCards));
 		}
 	}
+	
+	//Prints cards
 	public void printAll() {
 		for(int i = 0; i < cards.size(); i++) {
 			System.out.print(cards.get(i).getValue() + ", ");
 		}
 	}
+	
+	//Returns next card
 	public Card getNextCard() {
 		Card c = cards.get(card);
 		card++;
 		return c;
 	}
+	
+	//Returns num
 	public int getNumPeck() {
 		return numPeck;
 	}
+	
+	//Initializes numPeck
 	public void setNumPeck(int numPeck) {
 		this.numPeck = numPeck;
 	}
