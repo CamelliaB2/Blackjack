@@ -11,25 +11,17 @@ public class BlackJackGame {
 	public void initializeGame(){
 		String names;
 		System.out.println("Welcome to Blackjack!");
-		System.out.println("");
-		System.out.println("  BLACKJACK RULES: ");
-		System.out.println("	-Each player is dealt 2 cards. The dealer is dealt 2 cards with one face-up and one face-down.");
-		System.out.println("	-Cards are equal to their value with face cards being 10 and an Ace being 1 or 11.");
-		System.out.println("	-The players cards are added up for their total.");
-		System.out.println("	-Players Hit to gain another card from the deck. Players Stay to keep their current card total.");
-		System.out.println("	-Dealer Hits until they equal or exceed 17.");
-		System.out.println("	-The goal is to have a higher card total than the dealer without going over 21.");
-		System.out.println("	-If the player total equals the dealer total, it is a Push and the hand ends."); 
-		System.out.println("	-Players win their bet if they beat the dealer. Players win 1.5x their bet if they get Blackjack which is 21.");
-		System.out.println("");
-		System.out.println("");
 		
 		// Gets the amount of players and creates them
 		do {
-			System.out.print("How many people are playing (1-6)? ");
+			System.out.print("How many people are playing (1-6)? Please enter a valid number ");
 			users = ki.nextInt();
 			if(users > 6) {
 				System.out.println("One table max is 6 people.");
+			}
+			else if (users < 0)
+			{
+				System.out.println("Please enter a positive number from 1 - 6.");
 			}
 				
 			

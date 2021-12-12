@@ -77,7 +77,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Logout");
+        jButton4.setText("Go Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -152,8 +152,8 @@ public class MainMenu extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         //Go back to login screen
-        JOptionPane.showMessageDialog(null, "Are you sure you want to logout?"); //Confirms if you want to logout
-        Login l = new Login();
+        JOptionPane.showMessageDialog(null, "Are you sure you want to exit menu?"); //Confirms if you want to logout
+        Intro l = new Intro();
         l.show();
         dispose();
     }                                        

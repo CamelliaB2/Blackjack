@@ -162,7 +162,7 @@ public class About extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         // Go back to Login Page
-        Login l = new Login();
+        Intro l = new Intro();
         l.show();
         dispose();
     }                                        
