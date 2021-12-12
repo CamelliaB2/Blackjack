@@ -27,7 +27,7 @@ public class Rules extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">      
-    //The following code was made with Apache Netbeans and creates the Frontend of the Intro Menu, including any and all buttons, text, colors, etc.
+    //The following code was made with Apache Netbeans and creates the Frontend of the Rules Menu, including any and all buttons, text, colors, etc.
     private void initComponents() {
 
         jPanel5 = new javax.swing.JPanel();

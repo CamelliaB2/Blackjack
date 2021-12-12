@@ -3,13 +3,18 @@ public class Dealer {
 	private Hand hand;
 	private boolean hide;
 
-	//Constructs a Dealer
+	/**
+	 * The constructor for the Dealer
+	 */
 	public Dealer() {
 		hand = new Hand();
 		hide = true;
 	}
 	
-	// Determines if dealer has a blackjack
+	/**
+	 * Determines if dealer has a blackjack
+	 * @return true/ false for is this hand is a blackjack
+	 */
 	public boolean isBlackjack(){
 		if (hand.calculateTotal() == 21){
 			return true;
@@ -18,27 +23,42 @@ public class Dealer {
 		}
 	}
 	
-	//Returns hide
+	/**
+	 * Card should hide or shown
+	 * @return true/false does card need hide
+	 */
 	public boolean getHide() {
 		return hide;
 	}
 	
-	//Returns hand
+	/**
+	 * Get the hand form dealer
+	 * @return hand of the dealer
+	 */
 	public Hand getHand() {
 		return hand;
 	}
 
-	// Calculates the dealer's hand total
+	/**
+	 * Calculates the dealer's hand total
+	 * @return integer of the total value of dealer's hand
+	 */
 	public int calculateTotal() {
 		return hand.calculateTotal();
 	}
 	
-	// Clears the dealer's hand
+	/**
+	 * Clears the dealer's hand
+	 */
 	public void clearDealerHand() {
 		hand.clearHand();
 	}
 	
-	//Returns String of Dealer's hand
+	/**
+	 * print the dealer's hand
+	 * @param hide does dealer's hand need hide or all shown
+	 * @return string for the dealer's hand
+	 */
 	public String getHandString(boolean hide) {
 		String str = "";
 		if(hide) {

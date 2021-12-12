@@ -7,7 +7,9 @@ public class BlackJackGame {
 	private Deck deck;
 	private Dealer dealer = new Dealer();
 
-	// Starts game and displays the rules
+	/**
+	 * Starts game
+	 */
 	public void initializeGame(){
 		String names;
 		System.out.println("Welcome to Blackjack!");
@@ -33,13 +35,17 @@ public class BlackJackGame {
 		}
 	}
 	
-	// Shuffles the deck
+	/** 
+	 * Shuffles the deck
+	 */
 	public void shuffle() {
 		deck.mixCards(10);
 		
 	}
 
-	// Gets the bets from the players
+	/**
+	 * Gets the bets from the players
+	 */
 	public void getBets(){
 		int betValue;
 		
@@ -57,7 +63,10 @@ public class BlackJackGame {
 
 	}
 	
-	// Deals the cards to the players and dealer
+
+	/**
+	 * Deals the cards to the players and dealer
+	 */
 	public void dealCards(){
 		for (int j = 0; j < 2; j++) {
 			for (int i =0; i < users; i++) {
@@ -71,7 +80,9 @@ public class BlackJackGame {
 	}
 	
 
-	// Initial check for dealer or player Blackjack
+	/**
+	 * Initial check for dealer or player Blackjack
+	 */
 	public void checkBlackjack(){
 		
 		if (dealer.isBlackjack() ) {
@@ -95,7 +106,9 @@ public class BlackJackGame {
 		}		
 	}
 	
-	// This code takes the user commands to hit or stand
+	/**
+	 * This code takes the user commands to hit or stand
+	 */
 	public void hitOrStand() {
 		String command;
 		char c;
@@ -121,8 +134,13 @@ public class BlackJackGame {
 		}
 	}
 	
-	// Code for the play strategy
+	/**
+	 * Code for the play strategy, will tell player what the next move should be.
+	 * @param i player number
+	 * @param showtip on/off for the tip
+	 */
 	public void playStrategy(int i, boolean showtip) {
+		// If need show the tip, give a tip with the play strategy
 		if(showtip == true) {
 			Hand playerHand = players[i].getHand();
 			Hand dealerHand = dealer.getHand();
@@ -130,7 +148,9 @@ public class BlackJackGame {
 			Card dealerCard = dealerHand.getCard()[0];
 			Card[] playerCard = playerHand.getCard();
 			Card anotherCard;
+			// If there are 2 card in player hand, else is for more than 2 cards
 			if(playerHand.getCard().length == 2) {
+				// if player have two same value cards
 				if(playerCard[0] == playerCard[1]) {
 					if(playerCard[0].getValue() == 1) {
 						System.out.println("total is 2, you should split!");
@@ -189,6 +209,7 @@ public class BlackJackGame {
 					}
 
 				}
+				// If player have an ace in hand
 				else {
 					if(playerCard[0].getValue() == 1) {
 						anotherCard = playerCard[1];
@@ -262,6 +283,7 @@ public class BlackJackGame {
 				
 
 			}
+			//If player have more than two cards
 			else {
 				
 				if(total == 8) {
@@ -331,12 +353,15 @@ public class BlackJackGame {
 				}
 			}
 		}
+		// If tip do not open
 		else {
 			System.out.println("tip has been closed, you could change in setting");
 		}
 	}
 	
-	// Code for the dealer to play
+	/**
+	 * Code for the dealer to play
+	 */
 	public void dealerPlays() {
 		boolean isSomePlayerStillInTheGame = false;
 		for (int i = 0; i < users && isSomePlayerStillInTheGame == false; i++){
@@ -361,7 +386,9 @@ public class BlackJackGame {
 		}
 	}
 	
-	// This code calculates all possible outcomes and adds or removes the player bets
+	/**
+	 * This code calculates all possible outcomes and adds or removes the player bets
+	 */
 	public void settleBets() {
 		System.out.println();
 
@@ -388,7 +415,9 @@ public class BlackJackGame {
 
 	}
 
-	// This prints the players hands
+	/**
+	 * This prints the players hands
+	 */
 	public void printStatus() {
 		for (int i = 0; i < users; i++) {
 			if(players[i].getBank() > 0)
@@ -399,7 +428,9 @@ public class BlackJackGame {
 		System.out.println("Dealer has " + dealer.getHandString(true));
 	}
 	
-	// This prints the players banks and tells the player if s/he is out of the game
+	/**
+	 * This prints the players banks and tells the player if s/he is out of the game
+	 */
 	public void printMoney() {
 		for (int i = 0; i < users; i++) {
 			if(players[i].getBank() > 0)
@@ -414,7 +445,9 @@ public class BlackJackGame {
 		}
 	}
 
-	// This code resets all hands
+	/**
+	 * This code resets all hands
+	 */
 	public void clearHands() {
 		for (int i = 0; i < users; i++) {
 			players[i].getHand().clearHand();
@@ -423,7 +456,10 @@ public class BlackJackGame {
 
 	}
 	
-	// This decides to force the game to end when all players lose or lets players choose to keep playing or not
+	/**
+	 * This decides to force the game to end when all players lose or lets players choose to keep playing or not
+	 * @return true or false for does player want to play again
+	 */
 	public boolean playAgain() {
 		String command;
 		char c;
@@ -446,7 +482,10 @@ public class BlackJackGame {
 		return playState;
 	}
 	
-	// This says true or false to forcing the game to end
+	/**
+	 * This says true or false to forcing the game to end
+	 * @return true or false if all players have no money
+	 */
 	public boolean forceEnd() {
 		boolean end = false;
 		int endCount = 0;
@@ -470,7 +509,9 @@ public class BlackJackGame {
 		return end;
 	}
 	
-	// This is the end game code for when all players are out of the game or players decide to stop playing
+	/**
+	 * This is the end game code for when all players are out of the game or players decide to stop playing
+	 */
 	public void endGame() {
 		int endAmount;
 		String endState = " no change.";

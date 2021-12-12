@@ -6,29 +6,42 @@ public class Card {
 	public Card(){
 	}
 	
-	//Constructs a Card and initializes variables
+	/**
+	 * Constructor for the Card
+	 */
 	public Card(int deckNum, CardSuit suit, int value) {
 		this.suit = suit;
 		this.value = value;
 		this.deckNum = deckNum;
 	}
 	
-	//Returns the Deck Number
+	/**
+	 * Get the deck number
+	 * @return deckNum is the deck's number
+	 */
 	public int getDeckNum() {
 		return deckNum;
 	}
 
-	//Returns the card suit
+	/**
+	 * Get the card suit
+	 * @return suit for the card
+	 */
 	public CardSuit getSuit() {
 		return suit;
 	}
 
-	//Returns value
+	/**
+	 * Get the card value
+	 * @return value for the card
+	 */
 	public int getValue() {
 		return value;
 	}
 	
-	//Returns string of the card suit and value
+	/**
+	 * Get the name of the card suit and value
+	 */
 	public String toString() {
 		String s = "";
 		s =suit + "-"+ value;
