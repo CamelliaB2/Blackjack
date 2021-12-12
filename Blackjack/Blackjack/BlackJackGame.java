@@ -16,18 +16,14 @@ public class BlackJackGame {
 		do {
 			System.out.print("How many people are playing (1-6)? Please enter a valid number ");
 			users = ki.nextInt();
-			if(users > 6) {
-				System.out.println("One table max is 6 people.");
-			}
-			else if (users < 0)
-			{
-				System.out.println("Please enter a positive number from 1 - 6.");
+			if(users > 6 || users < 1) {
+				System.out.println("One table max is 6 people, please enter an amount between 1 and 6.");
 			}
 				
 			
 			
 
-		} while (users > 6 || users < 0);
+		} while (users > 6 || users < 1);
 
 		players = new Player[users];
 		deck = new Deck(6);
