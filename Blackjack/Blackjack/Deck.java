@@ -49,14 +49,6 @@ public class Deck {
 	public Card getNextCard() {
 		Card c = cards.get(card);
 		card++;
-		
-//		we need a new deck when after one round finish and the card is more than half totalcards in deck
-//		while(card > totalCards/2) {
-//			System.out.println("We need a new Deck");
-//			cards = new ArrayList<>();
-//			createDeck(numPeck);
-//			mixCards(10);
-//		}
 		return c;
 	}
 	public int getNumPeck() {
@@ -65,13 +57,4 @@ public class Deck {
 	public void setNumPeck(int numPeck) {
 		this.numPeck = numPeck;
 	}
-	
-	
-	
-	
-	
-//	public static void main(String[] args) {   //test use for check the peck is available
-//		Deck d = new Deck(2);
-//		d.printAll();
-//	}
 }
