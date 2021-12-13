@@ -1,27 +1,35 @@
+//package BlackJack;
+
 import java.util.ArrayList;
 import java.util.Random;
-
+/**
+ * the deck of the blackjack
+ * @author Xu Shi
+ * @version 1.0
+ * @date 2021-12-11
+ *
+ */
 public class Deck {
 	private ArrayList<Card> cards;
 	private int numPeck;
 	private int card = 0;
-	
 	/**
-	 * The constructor for the Deck
+	 * the constructor for the Deck
 	 * @param numPeck
-	 */	
+	 */
 	public Deck(int numPeck) {
 		this.setNumPeck(numPeck);
 		cards = new ArrayList<>();
+
 		createDeck(numPeck);
 		mixCards(10);
 	}
 	
-		/**
-		 * Create a deck which how many boxes of cards how
-		 * @param num the number of how many boxes
-		 */
-	 public void createDeck(int num) {
+	/**
+	 * create a deck which how many boxes of cards how
+	 * @param num the number of how many boxes
+	 */
+	public void createDeck(int num) {
 		if(num<1) {
 			System.out.println("not valued number");
 		}
@@ -36,20 +44,18 @@ public class Deck {
 			}
 		}
 	}
-	
-		/**
-		 * Swaps two cards
-		 * @param a card a
-		 * @param b card b
-		 */
+	/**
+	 * swap two cards
+	 * @param a card a
+	 * @param b card b
+	 */
 	public void swapCards(int a, int b) {
 		Card temp = cards.get(a);
 		cards.set(a,cards.get(b));
 		cards.set(b,temp);
 	}
-	
 	/**
-	 * Mix all of the cards in the deck
+	 * mix all the deck
 	 * @param times of fix the cards
 	 */
 	public void mixCards(int times) {
@@ -60,28 +66,31 @@ public class Deck {
 			swapCards(r1.nextInt(totalCards), r2.nextInt(totalCards));
 		}
 	}
-	
+//  test used, for print all the card in deck
+//	public void printAll() {
+//		for(int i = 0; i < cards.size(); i++) {
+//			System.out.print(cards.get(i).getValue() + ", ");
+//		}
+//	}
 	/**
-	 * Prints cards
-	 */
-	public void printAll() {
-		for(int i = 0; i < cards.size(); i++) {
-			System.out.print(cards.get(i).getValue() + ", ");
-		}
-	}
-	
-	/**
-	 * Get next card in the deck
+	 * get next card in the deck
 	 * @return a next card in deck
 	 */
 	public Card getNextCard() {
 		Card c = cards.get(card);
 		card++;
+		
+//		we need a new deck when after one round finish and the card is more than half total cards in deck
+//		while(card > totalCards/2) {
+//			System.out.println("We need a new Deck");
+//			cards = new ArrayList<>();
+//			createDeck(numPeck);
+//			mixCards(10);
+//		}
 		return c;
 	}
-	
 	/**
-	 * Get the number of the peck
+	 * get the number of the peck
 	 * @return integer number of the deck
 	 */
 	public int getNumPeck() {
@@ -89,10 +98,21 @@ public class Deck {
 	}
 	
 	/**
-	 * Set the card is belong to which deck
+	 * set the card is belong to which deck
 	 * @param numPeck
 	 */
 	public void setNumPeck(int numPeck) {
 		this.numPeck = numPeck;
 	}
+
+	public ArrayList<Card> getCards() {
+		return cards;
+	}
+	
+	
+//  test the card is fixed
+//	public static void main(String[] args) {   //test use for check the peck is available
+//		Deck d = new Deck(2);
+//		d.printAll();
+//	}
 }

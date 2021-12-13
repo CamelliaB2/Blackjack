@@ -1,16 +1,22 @@
-
+//package BlackJack;
+/**
+ * dealer, one of the character in the blackjack game
+ * @author Xu Shi
+ * @version 1.0
+ * @date 2021-12-11
+ *
+ */
 public class Dealer {
 	private Hand hand;
 	private boolean hide;
 
 	/**
-	 * The constructor for the Dealer
+	 * the constructor for the Dealer
 	 */
 	public Dealer() {
 		hand = new Hand();
 		hide = true;
 	}
-	
 	/**
 	 * Determines if dealer has a blackjack
 	 * @return true/ false for is this hand is a blackjack
@@ -22,17 +28,15 @@ public class Dealer {
 			return false;
 		}
 	}
-	
 	/**
-	 * Card should hide or shown
+	 * card should hide or shown
 	 * @return true/false does card need hide
 	 */
 	public boolean getHide() {
 		return hide;
 	}
-	
 	/**
-	 * Get the hand form dealer
+	 * get the hand form dealer
 	 * @return hand of the dealer
 	 */
 	public Hand getHand() {

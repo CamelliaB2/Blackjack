@@ -1,3 +1,9 @@
+//package BlackJack;
+/**
+ * enum for the card suit
+ * @author Xu Shi
+ * @version 1.0
+ */
 public enum CardSuit {
 	HEART{
         @Override

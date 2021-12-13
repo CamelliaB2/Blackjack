@@ -1,46 +1,44 @@
+//package BlackJack;
+/**
+ * a card should have it value Ace - King, suit, and deckNum for which deck it belong to
+ * @author Xu Shi
+ * @version 1.0
+ */
 public class Card {
 	private int deckNum;
 	private CardSuit suit;
 	private int value;
-	
-	public Card(){
-	}
-	
 	/**
-	 * Constructor for the Card
+	 * constructor for the Card
 	 */
 	public Card(int deckNum, CardSuit suit, int value) {
 		this.suit = suit;
 		this.value = value;
 		this.deckNum = deckNum;
 	}
-	
 	/**
-	 * Get the deck number
+	 * get the deck number
 	 * @return deckNum is the deck's number
 	 */
 	public int getDeckNum() {
 		return deckNum;
 	}
-
 	/**
-	 * Get the card suit
+	 * get the card suit
 	 * @return suit for the card
 	 */
 	public CardSuit getSuit() {
 		return suit;
 	}
-
 	/**
-	 * Get the card value
+	 * get the card value
 	 * @return value for the card
 	 */
 	public int getValue() {
 		return value;
 	}
-	
 	/**
-	 * Get the name of the card suit and value
+	 * get the name of the card suit and value
 	 */
 	public String toString() {
 		String s = "";
