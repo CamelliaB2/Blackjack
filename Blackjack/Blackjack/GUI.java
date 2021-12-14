@@ -409,7 +409,7 @@ public class GUI extends JFrame {
 					g.setFont(fontCard);
 					g.drawString(c.toString(), gridX + i * cardTW + cardSpacing, gridY + cardSpacing + cardAH + cardTH);
 
-					if (c.getSuit().toString().equals("Hearts")) {
+					if (c.getSuit().toString().equals("HEART")) {
 						g.fillOval(gridX + cardTW * i + 42, gridY + 70 + cardTH, 35, 35);
 						g.fillOval(gridX + cardTW * i + 73, gridY + 70 + cardTH, 35, 35);
 						g.fillArc(gridX + cardTW * i + 30, gridY + 90 + cardTH, 90, 90, 51, 78);
@@ -461,7 +461,7 @@ public class GUI extends JFrame {
 				} else {
 					g.setColor(cPlayer);
 				}
-				g.drawString(L.getMessage(), gridX + 20, gridY + 480 + logIndex * 35);
+				g.drawString(L.getMessage(), gridX + 20, gridY + 450 + logIndex * 35);
 				logIndex++;
 			}
 			
