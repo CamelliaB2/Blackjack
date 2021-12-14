@@ -12,6 +12,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 /**
  * GUI for the blackJack
@@ -327,7 +329,7 @@ public class GUI extends JFrame {
 				g.setFont(fontCard);
 				g.drawString(c.toString(), gridX + i * cardTW + cardSpacing, gridY + cardSpacing + cardAH);
 
-				if (c.getSuit().toString().equals("Hearts")) {
+				if (c.getSuit().toString().equals("HEART")) {
 					g.fillOval(gridX + cardTW * i + 42, gridY + 70, 35, 35);
 					g.fillOval(gridX + cardTW * i + 73, gridY + 70, 35, 35);
 					g.fillArc(gridX + cardTW * i + 30, gridY + 90, 90, 90, 51, 78);
@@ -369,7 +371,7 @@ public class GUI extends JFrame {
 			}
 			g.setFont(fontCard);
 			g.drawString(showDealerCard.toString(), gridX + cardSpacing, gridY + cardSpacing + cardTH + 180);
-			if (showDealerCard.getSuit().toString().equals("Hearts")) {
+			if (showDealerCard.getSuit().toString().equals("HEART")) {
 				g.fillOval(gridX + 42, gridY + 70 + cardTH, 35, 35);
 				g.fillOval(gridX + 73, gridY + 70 + cardTH, 35, 35);
 				g.fillArc(gridX + 30, gridY + 90 + cardTH, 90, 90, 51, 78);
@@ -446,7 +448,9 @@ public class GUI extends JFrame {
 			g.fillRect(1090, 400, 50, 50);
 			g.setColor(Color.black);
 			double percent = (21 - (double)player.getHand().calculateTotal())/13;
-			g.drawString(Double.toString(percent), 1100, 430);
+			DecimalFormat df = new DecimalFormat("#.##");
+			String p = df.format(percent);
+			g.drawString(p, 1100, 430);
 			g.drawString("busting:", 1020, 430);
 			// Log"
 			g.setFont(fontLog);
